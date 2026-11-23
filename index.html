@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#080604">
+
+<title>Happy New Year 2027 | VRPAIData</title>
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VRPAIData">
+<meta property="og:title" content="🎆 Happy New Year 2027 | VRPAIData">
+<meta property="og:description" content="இனிய புத்தாண்டு நல்வாழ்த்துகள்! அன்புடன் VRPAIData.">
+<meta property="og:url" content="https://vrpaidata-source.github.io/New-year-2027/">
+<meta property="og:image" content="https://vrpaidata-source.github.io/New-year-2027/newyear-preview-2.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+:root{
+ --gold:#f7d98c;
+ --light:#fff0c6;
+ --orange:#e87521;
+ --dark:#080604;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+ width:100%;
+ height:100%;
+ margin:0;
+ overflow:hidden;
+ background:#050403;
+ color:var(--light);
+ font-family:Arial,sans-serif;
+ overscroll-behavior:none;
+}
+
+body{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+
+#app{
+ position:relative;
+ isolation:isolate;
+ overflow:hidden;
+ width:min(100vw,56.25svh);
+ height:min(100svh,177.7778vw);
+ aspect-ratio:9/16;
+ background:#080604;
+ border:1px solid #98702b;
+}
+
+#bgFallback,#bgVideo,#videoShade,#goldDust{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ pointer-events:none;
+}
+
+#bgFallback{
+ background:radial-gradient(ellipse at 50% 38%,#71300e 0%,#281407 42%,#050403 100%);
+}
+
+#bgVideo{
+ z-index:1;
+ object-fit:cover;
+ filter:brightness(.85) contrast(1.12) saturate(1.25);
+}
+
+#videoShade{
+ z-index:2;
+ background:linear-gradient(180deg,#05040333,#08060422 42%,#03020188);
+}
+
+#goldDust{
+ z-index:3;
+ opacity:.2;
+ background-image:
+ radial-gradient(#ffe6a1 1px,transparent 1.5px),
+ radial-gradient(#eab64d 1px,transparent 1.5px);
+ background-size:79px 93px,121px 137px;
+ background-position:0 0,35px 45px;
+ animation:dust 18s linear infinite;
+}
+
+@keyframes dust{
+ to{background-position:0 -180px,35px -210px}
+}
+
+#main{
+ position:absolute;
+ z-index:4;
+ inset:0;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:space-between;
+ padding:5% 5% 4%;
+ text-align:center;
+}
+
+.brand{
+ font-weight:900;
+ letter-spacing:4px;
+ font-size:clamp(17px,4.5vw,23px);
+ color:var(--gold);
+ text-shadow:0 0 12px #a66b1e;
+}
+
+.tag{
+ font-size:8px;
+ letter-spacing:3px;
+ color:#e2c17a;
+ margin-top:5px;
+}
+
+.hero{margin-top:1%}
+
+.heroTitle{
+ font:clamp(28px,8vw,43px) Georgia,serif;
+ color:#fff0c4;
+ text-shadow:0 0 12px #9a6927;
+}
+
+.year{
+ font:bold clamp(76px,21vw,108px) Georgia,serif;
+ line-height:1.05;
+ color:#ffdf8c;
+ text-shadow:0 0 8px #d69a39,0 0 20px #805018;
+}
+
+.sub{
+ font-size:11px;
+ line-height:1.7;
+ color:#f0d9a5;
+}
+
+.timerWrap{width:100%}
+
+.timerTitle{
+ font-size:9px;
+ letter-spacing:3px;
+ color:#f0d18b;
+ margin-bottom:8px;
+}
+
+.timer{
+ display:flex;
+ gap:5px;
+ width:100%;
+}
+
+.unit{
+ flex:1;
+ min-width:0;
+ padding:9px 2px;
+ border:1px solid #98702b;
+ border-radius:9px;
+ background:#120d08e8;
+}
+
+.unit b{
+ display:block;
+ font-size:clamp(18px,5vw,24px);
+ color:#ffe8ae;
+}
+
+.unit span{
+ font-size:7px;
+ letter-spacing:1px;
+ color:#c6a66a;
+}
+
+.panel{
+ width:100%;
+ padding:11px 12px;
+ border:1px solid #9b7535;
+ border-radius:13px;
+ background:#100b07ed;
+ box-shadow:0 8px 25px #0008;
+}
+
+.panel h3{
+ font:16px Georgia,serif;
+ color:#ffe4a1;
+ margin:0 0 7px;
+}
+
+input,textarea{
+ display:block;
+ width:100%;
+ margin:5px 0;
+ padding:10px;
+ border:1px solid #876329;
+ border-radius:7px;
+ background:#080604;
+ color:#fff0c6;
+ font-size:12px;
+ outline:none;
+}
+
+input:focus,textarea:focus{border-color:#f7d98c}
+
+textarea{
+ height:110px;
+ resize:vertical;
+ line-height:1.5;
+ overflow-y:auto;
+ font-family:Arial,sans-serif;
+}
+
+button{
+ border:0;
+ border-radius:25px;
+ padding:11px 18px;
+ background:linear-gradient(100deg,#a87520,#ffe9a8,#b27c23);
+ color:#180f03;
+ font-size:12px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+button:active{transform:scale(.99)}
+
+.send{
+ width:100%;
+ margin-top:4px;
+}
+
+#status{
+ font-size:9px;
+ color:#e7c77e;
+ min-height:12px;
+ margin-top:5px;
+}
+
+.footer{
+ font-size:8px;
+ letter-spacing:2px;
+ color:#c0a16a;
+}
+
+/* COUNTDOWN CELEBRATION */
+
+#countdownCelebration{
+ position:absolute;
+ z-index:20;
+ inset:0;
+ display:none;
+ overflow:hidden;
+ background:#030201;
+}
+
+#countdownCelebration.active{display:block}
+
+#celebrationVideo{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ background:#030201;
+ filter:brightness(.95) contrast(1.12) saturate(1.3);
+}
+
+.celebrationShade{
+ position:absolute;
+ inset:0;
+ background:linear-gradient(180deg,#0005 0%,transparent 35%,#0005 75%,#000b 100%);
+ pointer-events:none;
+}
+
+#bigCountdown{
+ position:absolute;
+ inset:0;
+ z-index:2;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font:bold clamp(120px,38vw,210px) Georgia,serif;
+ color:#ffe5a0;
+ text-shadow:0 0 15px #ffb52e,0 0 40px #ff7900,0 0 90px #ff9c21;
+ animation:countPop .9s ease infinite alternate;
+}
+
+@keyframes countPop{
+ from{transform:scale(.8);opacity:.7}
+ to{transform:scale(1.12);opacity:1}
+}
+
+#newYearFinal{
+ position:absolute;
+ z-index:3;
+ inset:0;
+ display:none;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ gap:16px;
+ padding:15px;
+ color:#ffe6a3;
+ text-shadow:0 0 20px #ff9c21;
+}
+
+#newYearFinal.show{
+ display:flex;
+ animation:grandEntry 1.5s ease both;
+}
+
+#newYearFinal div{
+ font:clamp(24px,7vw,39px) Georgia,serif;
+}
+
+#newYearFinal strong{
+ font:bold clamp(100px,30vw,155px) Georgia,serif;
+ color:#ffd16c;
+ text-shadow:0 0 15px #ffb52e,0 0 45px #ff7900,0 0 90px #ff9c21;
+}
+
+#newYearFinal span{
+ font-size:9px;
+ letter-spacing:3px;
+ line-height:1.8;
+}
+
+#newYearFinal small{
+ font-size:12px;
+ letter-spacing:3px;
+}
+
+@keyframes grandEntry{
+ from{opacity:0;transform:scale(.3)}
+ to{opacity:1;transform:scale(1)}
+}
+
+/* RECEIVER SCREEN */
+
+#intro{
+ position:absolute;
+ z-index:10;
+ inset:0;
+ display:none;
+ overflow:hidden;
+ background:radial-gradient(ellipse at 50% 35%,#54220d 0%,#1b0c06 42%,#030201 100%);
+}
+
+#intro.active{display:block}
+
+#sky{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ pointer-events:none;
+}
+
+#intro::before{
+ content:"";
+ position:absolute;
+ inset:0;
+ z-index:0;
+ opacity:.25;
+ background-image:
+ radial-gradient(#ffcf76 1px,transparent 1.5px),
+ radial-gradient(#e87521 1px,transparent 1.5px);
+ background-size:67px 83px,103px 117px;
+ animation:dust 15s linear infinite;
+}
+
+#coverStage{
+ position:absolute;
+ z-index:2;
+ left:8%;
+ right:8%;
+ top:17%;
+ height:58%;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ perspective:1000px;
+ transition:opacity .8s ease,transform .8s ease;
+}
+
+#cover{
+ position:relative;
+ width:100%;
+ height:100%;
+ border:1px solid #d58b35;
+ border-radius:14px;
+ background:radial-gradient(ellipse at 50% 25%,#84380f 0%,#321507 55%,#100803 100%);
+ box-shadow:0 0 18px #e8752140,0 20px 60px #000e,inset 0 0 30px #f5a13a18;
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+ transform-style:preserve-3d;
+ transition:transform 1.2s ease,opacity 1s ease;
+}
+
+#cover::before{
+ content:"";
+ position:absolute;
+ inset:10px;
+ border:1px solid #d9a45477;
+ border-radius:9px;
+ pointer-events:none;
+}
+
+.coverBrand{
+ font-size:12px;
+ letter-spacing:5px;
+ color:#e9b96b;
+}
+
+.coverLine{
+ width:65%;
+ height:1px;
+ background:linear-gradient(90deg,transparent,#ffdb8a,transparent);
+ margin:20px 0;
+}
+
+.coverTitle{
+ font:clamp(32px,10vw,50px) Georgia,serif;
+ color:#ffe1a0;
+ text-shadow:0 0 20px #e87521;
+ text-align:center;
+}
+
+.coverYear{
+ font:bold clamp(65px,18vw,95px) Georgia,serif;
+ color:#ffc56c;
+ text-shadow:0 0 18px #e87521,0 4px 10px #000;
+}
+
+.coverHint{
+ position:absolute;
+ bottom:23px;
+ color:#e9bc75;
+ font-size:9px;
+ letter-spacing:2px;
+ animation:hintPulse 1.5s infinite;
+}
+
+@keyframes hintPulse{50%{opacity:.45}}
+
+#cover.open{
+ transform:rotateY(-110deg) scale(.88);
+ opacity:0;
+}
+
+#letter{
+ position:absolute;
+ z-index:3;
+ left:7%;
+ right:7%;
+ top:12%;
+ bottom:12%;
+ max-height:76%;
+ padding:20px 16px 24px;
+ border:1px solid #e5b65e;
+ border-radius:10px;
+ background:linear-gradient(145deg,#fff0c9 0%,#f2d29a 48%,#e6b873 100%);
+ color:#381b0a;
+ box-shadow:0 0 30px #e8752166,0 20px 55px #000e,inset 0 0 18px #fff8d6;
+ text-align:center;
+ overflow-y:auto;
+ overscroll-behavior:contain;
+ opacity:0;
+ transform:translateY(65px) scale(.78);
+ transform-origin:center;
+ transition:opacity 1.2s ease,transform 1.2s cubic-bezier(.2,.8,.2,1);
+ scrollbar-width:thin;
+ scrollbar-color:#a86a26 transparent;
+}
+
+#letter.show{
+ opacity:1;
+ transform:translateY(0) scale(1);
+}
+
+.letterTop{
+ font-size:9px;
+ letter-spacing:3px;
+ color:#9a541d;
+}
+
+.letterDivider{
+ width:70%;
+ height:1px;
+ margin:10px auto;
+ background:linear-gradient(90deg,transparent,#a86a26,transparent);
+}
+
+.letterTitle{
+ font:clamp(29px,8vw,42px) Georgia,serif;
+ color:#9b4514;
+ text-shadow:0 1px 0 #fff4d8;
+ margin:6px 0;
+}
+
+.letterYear{
+ font:bold clamp(38px,11vw,58px) Georgia,serif;
+ color:#b65b19;
+ text-shadow:0 2px 2px #fff2c4;
+}
+
+#showWish{
+ font:clamp(13px,3.8vw,15px) Georgia,serif;
+ line-height:1.55;
+ color:#45230e;
+ white-space:pre-wrap;
+ overflow-wrap:anywhere;
+ margin-top:10px;
+}
+
+#showSender{
+ font:bold 13px Georgia,serif;
+ color:#8e4013;
+ margin-top:14px;
+}
+
+.letterHeart{
+ font-size:19px;
+ margin-top:8px;
+}
+
+#fireworksLabel{
+ position:absolute;
+ z-index:4;
+ top:5%;
+ left:0;
+ right:0;
+ text-align:center;
+ color:#f7d98c;
+ font-size:9px;
+ letter-spacing:3px;
+ opacity:0;
+ transition:opacity 1s;
+}
+
+#fireworksLabel.show{opacity:1}
+
+#closeIntro{
+ position:absolute;
+ z-index:6;
+ bottom:2%;
+ left:50%;
+ transform:translateX(-50%);
+ padding:10px 22px;
+ border:1px solid #c18a39;
+ background:#180c06e8;
+ color:#ffdf9a;
+ border-radius:25px;
+ font-size:10px;
+ letter-spacing:1px;
+ opacity:0;
+ transition:opacity 1s;
+ white-space:nowrap;
+}
+
+#closeIntro.show{opacity:1}
+
+@media(max-height:650px){
+ #main{padding-top:3%;padding-bottom:2%}
+ .panel{padding:8px 10px}
+ textarea{height:85px}
+ .unit{padding:6px 2px}
+ #letter{top:9%;bottom:10%;max-height:81%;padding:14px 12px}
+ #showWish{font-size:13px}
+ #coverStage{top:15%;height:60%}
+}
+
+@media(max-width:380px){
+ .panel{padding:9px}
+ textarea{height:95px}
+ #letter{left:6%;right:6%;padding:16px 12px}
+}
+</style>
+</head>
+
+<body>
+<div id="app">
+
+<div id="bgFallback"></div>
+
+<video id="bgVideo" autoplay muted loop playsinline preload="metadata">
+ <source src="newyear-bg.mp4" type="video/mp4">
+</video>
+
+<div id="videoShade"></div>
+<div id="goldDust"></div>
+
+<main id="main">
+
+<header>
+ <div class="brand">VRPAIData</div>
+ <div class="tag">SPREADING HAPPINESS</div>
+</header>
+
+<section class="hero">
+ <div class="heroTitle">Happy New Year</div>
+ <div class="year">2027</div>
+ <div class="sub">
+  புதிய நம்பிக்கை • புதிய கனவுகள்<br>
+  A Beautiful New Beginning ❤️
+ </div>
+</section>
+
+<section class="timerWrap">
+ <div class="timerTitle">NEW YEAR COUNTDOWN</div>
+ <div class="timer">
+  <div class="unit"><b id="days">00</b><span>DAYS</span></div>
+  <div class="unit"><b id="hours">00</b><span>HOURS</span></div>
+  <div class="unit"><b id="minutes">00</b><span>MINUTES</span></div>
+  <div class="unit"><b id="seconds">00</b><span>SECONDS</span></div>
+ </div>
+</section>
+
+<section class="panel">
+ <h3>💌 Send Your Wishes</h3>
+
+ <input id="sender" maxlength="45" autocomplete="name"
+  placeholder="Sender Name / அனுப்புநர் பெயர்">
+
+ <textarea id="wish" maxlength="600"></textarea>
+
+ <button class="send" id="sendButton" type="button">
+  🎁 SEND WISHES
+ </button>
+
+ <div id="status" role="status" aria-live="polite"></div>
+</section>
+
+<footer class="footer">WITH LOVE ❤️ VRPAIData</footer>
+</main>
+
+<!-- LAST 10 SECONDS -->
+
+<section id="countdownCelebration">
+
+ <video id="celebrationVideo" muted playsinline preload="auto" loop>
+  <source src="newyear-3d.mp4" type="video/mp4">
+ </video>
+
+ <div class="celebrationShade"></div>
+ <div id="bigCountdown">10</div>
+
+ <div id="newYearFinal">
+  <div>🎆 HAPPY NEW YEAR 🎆</div>
+  <strong>2027</strong>
+  <span>WELCOME TO A BEAUTIFUL<br>NEW BEGINNING</span>
+  <small>WITH LOVE ❤️ VRPAIData</small>
+ </div>
+</section>
+
+<audio id="newYearMusic" src="newyear-song.mp3" preload="auto" loop></audio>
+
+<!-- RECEIVER SCREEN -->
+
+<section id="intro" aria-label="Personal New Year greeting">
+
+ <canvas id="sky"></canvas>
+
+ <div id="fireworksLabel">✨ A SPECIAL WISH FOR YOU ✨</div>
+
+ <div id="coverStage">
+  <div id="cover">
+   <div class="coverBrand">VRPAIData</div>
+   <div class="coverLine"></div>
+   <div class="coverTitle">Happy New Year</div>
+   <div class="coverYear">2027</div>
+   <div class="coverLine"></div>
+   <div class="coverHint">✨ YOUR SPECIAL GREETING ✨</div>
+  </div>
+ </div>
+
+ <div id="letter">
+  <div class="letterTop">A SPECIAL MESSAGE FOR YOU</div>
+  <div class="letterDivider"></div>
+  <div class="letterTitle">Happy New Year</div>
+  <div class="letterYear">2027</div>
+  <div class="letterDivider"></div>
+  <div id="showWish"></div>
+  <div id="showSender"></div>
+  <div class="letterHeart">❤️</div>
+ </div>
+
+ <button id="closeIntro" type="button">BACK TO VRPAIData</button>
+</section>
+
+</div>
+
+<script>
+"use strict";
+
+/* DEFAULT WISH */
+
+const DEFAULT_WISH =
+`🎆 இனிய புத்தாண்டு நல்வாழ்த்துகள் – 2027! 🎆
+
+இந்தப் புத்தாண்டு உங்கள் வாழ்வில் மகிழ்ச்சி, ஆரோக்கியம், செல்வம், வெற்றி மற்றும் மனநிறைவைத் தரட்டும்.
+
+✨ உங்கள் கனவுகள் அனைத்தும் நனவாகட்டும்!
+✨ குடும்பத்தில் அன்பும் அமைதியும் நிலைக்கட்டும்!
+
+❤️ அன்புடன் – VRPAIData`;
+
+document.getElementById("wish").value=DEFAULT_WISH;
+
+
+/* ELEMENTS */
+
+const music=document.getElementById("newYearMusic");
+const celebrationScreen=document.getElementById("countdownCelebration");
+const celebrationVideo=document.getElementById("celebrationVideo");
+const bigCountdown=document.getElementById("bigCountdown");
+const finalScreen=document.getElementById("newYearFinal");
+
+
+/* MUSIC */
+
+let musicUnlocked=false;
+let musicStarting=false;
+let audioContext=null;
+
+function playTouchSound(){
+
+ try{
+  const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+  if(!AudioContextClass)return;
+
+  if(!audioContext)audioContext=new AudioContextClass();
+
+  if(audioContext.state==="suspended")audioContext.resume();
+
+  const oscillator=audioContext.createOscillator();
+  const gain=audioContext.createGain();
+
+  oscillator.type="sine";
+  oscillator.frequency.setValueAtTime(880,audioContext.currentTime);
+  oscillator.frequency.exponentialRampToValueAtTime(1320,audioContext.currentTime+.16);
+
+  gain.gain.setValueAtTime(.0001,audioContext.currentTime);
+  gain.gain.exponentialRampToValueAtTime(.12,audioContext.currentTime+.025);
+  gain.gain.exponentialRampToValueAtTime(.0001,audioContext.currentTime+.35);
+
+  oscillator.connect(gain);
+  gain.connect(audioContext.destination);
+
+  oscillator.start();
+  oscillator.stop(audioContext.currentTime+.36);
+
+ }catch(error){
+  console.log(error);
+ }
+}
+
+function unlockMusic(){
+
+ if(musicUnlocked||musicStarting)return;
+
+ musicStarting=true;
+ playTouchSound();
+
+ music.volume=.8;
+
+ music.play().then(()=>{
+  musicUnlocked=true;
+  musicStarting=false;
+ }).catch(error=>{
+  musicStarting=false;
+  console.log("Music playback blocked:",error);
+ });
+}
+
+document.addEventListener("pointerdown",unlockMusic);
+
+
+/* COUNTDOWN CELEBRATION */
+
+let celebrationStarted=false;
+let celebrationFinished=false;
+
+function startCountdownCelebration(){
+
+ if(celebrationStarted)return;
+
+ celebrationStarted=true;
+
+ celebrationScreen.classList.add("active");
+ bigCountdown.style.display="flex";
+ finalScreen.classList.remove("show");
+
+ bigCountdown.textContent="10";
+
+ celebrationVideo.currentTime=0;
+
+ celebrationVideo.play().catch(error=>{
+  console.log("Celebration video error:",error);
+ });
+}
+
+function updateGrandCountdown(remaining){
+
+ const number=Math.ceil(remaining/1000);
+
+ if(number>0){
+  bigCountdown.textContent=number;
+ }else{
+  finishNewYearCelebration();
+ }
+}
+
+function finishNewYearCelebration(){
+
+ if(celebrationFinished)return;
+
+ celebrationFinished=true;
+ bigCountdown.style.display="none";
+ finalScreen.classList.add("show");
+}
+
+
+/* COUNTDOWN MODE */
+
+/*
+ TEST MODE:
+ Website open ஆன 5 seconds கழித்து
+ 10 seconds countdown வரும்.
+
+ REAL MODE:
+ 2027 January 1 midnight countdown வரும்.
+*/
+
+const TEST_MODE=true;
+
+const NEW_YEAR_TARGET=TEST_MODE
+ ? Date.now()+15000
+ : new Date("2027-01-01T00:00:00+05:30").getTime();
+
+
+/* MAIN TIMER */
+
+function updateTimer(){
+
+ const remaining=Math.max(0,NEW_YEAR_TARGET-Date.now());
+
+ document.getElementById("days").textContent=
+  String(Math.floor(remaining/86400000)).padStart(2,"0");
+
+ document.getElementById("hours").textContent=
+  String(Math.floor(remaining%86400000/3600000)).padStart(2,"0");
+
+ document.getElementById("minutes").textContent=
+  String(Math.floor(remaining%3600000/60000)).padStart(2,"0");
+
+ document.getElementById("seconds").textContent=
+  String(Math.floor(remaining%60000/1000)).padStart(2,"0");
+
+ if(remaining<=10000){
+  startCountdownCelebration();
+  updateGrandCountdown(remaining);
+ }
+}
+
+updateTimer();
+setInterval(updateTimer,50);
+
+
+/* SHARE WISHES */
+
+async function sendWish(){
+
+ const name=document.getElementById("sender").value.trim();
+
+ const message=
+  document.getElementById("wish").value.trim()||DEFAULT_WISH;
+
+ const status=document.getElementById("status");
+
+ if(!name){
+  alert("Please enter Sender Name / அனுப்புநர் பெயர்");
+  document.getElementById("sender").focus();
+  return;
+ }
+
+ const shareURL=new URL(location.href);
+
+ shareURL.search="";
+ shareURL.hash="";
+
+ shareURL.searchParams.set("sender",name);
+ shareURL.searchParams.set(
+  "wish",
+  message===DEFAULT_WISH?"default":message
+ );
+
+ const link=shareURL.toString();
+
+ const shareText=
+`🎆 இனிய புத்தாண்டு நல்வாழ்த்துகள் – 2027! 🎆
+
+💌 அன்புடன் – ${name}
+
+உங்களுக்கான சிறப்பு புத்தாண்டு வாழ்த்தைத் திறந்து பாருங்கள்!
+
+❤️ TEAM VRPAIData`;
+
+ if(navigator.share){
+
+  try{
+
+   await navigator.share({
+    title:"Happy New Year 2027 | VRPAIData",
+    text:shareText,
+    url:link
+   });
+
+   status.textContent="❤️ நன்றி!";
+
+  }catch(error){
+
+   if(error.name!=="AbortError"){
+    status.textContent="பகிர முடியவில்லை. மீண்டும் முயற்சிக்கவும்.";
+    console.log(error);
+   }
+  }
+
+ }else{
+
+  try{
+   await navigator.clipboard.writeText(shareText+"\n"+link);
+   status.textContent="Link copied!";
+  }catch(error){
+   status.textContent="இந்த Browser-ல் Share வசதி கிடைக்கவில்லை.";
+  }
+ }
+}
+
+document.getElementById("sendButton")
+ .addEventListener("click",sendWish);
+
+
+/* FIREWORKS ENGINE */
+
+const canvas=document.getElementById("sky");
+const ctx=canvas.getContext("2d",{alpha:true});
+
+let W=0,H=0,dpr=1;
+let particles=[];
+let rockets=[];
+let animationFrame=0;
+let running=false;
+let launchTimers=[];
+
+const HUES=[42,190,280,0,120,320,55,210,25,160,300,80,15];
+
+function resizeCanvas(){
+
+ dpr=Math.min(window.devicePixelRatio||1,2);
+ W=canvas.clientWidth;
+ H=canvas.clientHeight;
+
+ canvas.width=Math.max(1,Math.floor(W*dpr));
+ canvas.height=Math.max(1,Math.floor(H*dpr));
+
+ ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+
+window.addEventListener("resize",()=>{
+ if(running)resizeCanvas();
+});
+
+function launchRocket(type){
+
+ rockets.push({
+  x:W*(.14+Math.random()*.72),
+  y:H+12,
+  targetY:H*(.15+Math.random()*.3),
+  speed:6+Math.random()*1.5,
+  hue:HUES[type%HUES.length],
+  type,
+  trail:[]
+ });
+}
+
+function addParticle(x,y,vx,vy,hue,size,life,gravity){
+
+ particles.push({
+  x,y,oldX:x,oldY:y,vx,vy,hue,size,
+  life,maxLife:life,
+  decay:.006+Math.random()*.002,
+  gravity
+ });
+}
+
+function explode(x,y,type,hue){
+
+ const count=68;
+
+ for(let i=0;i<count;i++){
+
+  const angle=Math.PI*2*i/count;
+  let speed=1.7+Math.random()*1.7;
+  let vx=Math.cos(angle)*speed;
+  let vy=Math.sin(angle)*speed;
+
+  switch(type%5){
+
+   case 1:
+    speed=3+Math.random();
+    vx=Math.cos(angle)*speed;
+    vy=Math.sin(angle)*speed;
+    break;
+
+   case 2:
+    speed=(i%2?3.7:1.2);
+    vx=Math.cos(angle)*speed;
+    vy=Math.sin(angle)*speed;
+    break;
+
+   case 3:
+    vx*=.58;
+    vy*=1.45;
+    break;
+
+   case 4:
+    vx*=1.45;
+    vy*=.68;
+    break;
+  }
+
+  addParticle(
+   x,y,vx,vy,hue,
+   1.15+Math.random()*.65,
+   1.15,
+   .018+Math.random()*.012
+  );
+ }
+
+ for(let i=0;i<12;i++){
+
+  const a=Math.PI*2*i/12;
+  const speed=.45+Math.random()*.9;
+
+  addParticle(
+   x,y,Math.cos(a)*speed,Math.sin(a)*speed,
+   42,1,1.35,.025
+  );
+ }
+}
+
+function drawRocket(r){
+
+ r.trail.push({x:r.x,y:r.y});
+
+ if(r.trail.length>7)r.trail.shift();
+
+ for(let i=0;i<r.trail.length;i++){
+
+  const point=r.trail[i];
+
+  ctx.globalAlpha=((i+1)/r.trail.length)*.42;
+  ctx.fillStyle=`hsl(${r.hue},85%,62%)`;
+
+  ctx.beginPath();
+  ctx.arc(point.x,point.y,.9+(i/r.trail.length)*.7,0,Math.PI*2);
+  ctx.fill();
+ }
+
+ ctx.globalAlpha=.85;
+ ctx.fillStyle=`hsl(${r.hue},90%,68%)`;
+
+ ctx.beginPath();
+ ctx.arc(r.x,r.y,1.5,0,Math.PI*2);
+ ctx.fill();
+}
+
+function drawParticle(p){
+
+ const fade=Math.max(0,Math.min(1,p.life/p.maxLife));
+
+ ctx.globalAlpha=fade*.78;
+ ctx.strokeStyle=`hsl(${p.hue},82%,62%)`;
+ ctx.lineWidth=p.size;
+ ctx.lineCap="round";
+
+ ctx.beginPath();
+ ctx.moveTo(p.oldX,p.oldY);
+ ctx.lineTo(p.x,p.y);
+ ctx.stroke();
+
+ ctx.globalAlpha=fade*.68;
+ ctx.fillStyle=`hsl(${p.hue},82%,66%)`;
+
+ ctx.beginPath();
+ ctx.arc(p.x,p.y,p.size*.55,0,Math.PI*2);
+ ctx.fill();
+}
+
+function frame(){
+
+ if(!running)return;
+
+ ctx.globalAlpha=1;
+ ctx.fillStyle="rgba(3,2,1,0.14)";
+ ctx.fillRect(0,0,W,H);
+
+ for(let i=rockets.length-1;i>=0;i--){
+
+  const r=rockets[i];
+
+  r.y-=r.speed;
+  drawRocket(r);
+
+  if(r.y<=r.targetY){
+   explode(r.x,r.y,r.type,r.hue);
+   rockets.splice(i,1);
+  }
+ }
+
+ for(let i=particles.length-1;i>=0;i--){
+
+  const p=particles[i];
+
+  p.oldX=p.x;
+  p.oldY=p.y;
+
+  p.x+=p.vx;
+  p.y+=p.vy;
+
+  p.vy+=p.gravity;
+  p.vx*=.994;
+  p.vy*=.994;
+  p.life-=p.decay;
+
+  drawParticle(p);
+
+  if(p.life<=0)particles.splice(i,1);
+ }
+
+ ctx.globalAlpha=1;
+ animationFrame=requestAnimationFrame(frame);
+}
+
+function startFireworks(){
+
+ if(running)return;
+
+ resizeCanvas();
+
+ particles=[];
+ rockets=[];
+ running=true;
+
+ frame();
+
+ for(let i=0;i<13;i++){
+
+  launchTimers.push(setTimeout(()=>{
+   if(running)launchRocket(i);
+  },i*380));
+ }
+
+ let extraCount=0;
+
+ const continuous=()=>{
+
+  if(!running)return;
+
+  if(extraCount<1000){
+
+   launchRocket(Math.floor(Math.random()*13));
+   extraCount++;
+
+   launchTimers.push(setTimeout(continuous,1100));
+  }
+ };
+
+ launchTimers.push(setTimeout(continuous,5000));
+}
+
+function stopFireworks(){
+
+ running=false;
+
+ cancelAnimationFrame(animationFrame);
+
+ launchTimers.forEach(clearTimeout);
+ launchTimers=[];
+
+ rockets=[];
+ particles=[];
+
+ ctx.clearRect(0,0,W,H);
+}
+
+
+/* RECEIVER LETTER */
+
+let greetingStarted=false;
+
+function startWelcome(){
+
+ const params=new URLSearchParams(location.search);
+ const sender=params.get("sender");
+
+ if(!sender||greetingStarted)return;
+
+ greetingStarted=true;
+
+ let wish=params.get("wish")||"default";
+
+ if(wish==="default")wish=DEFAULT_WISH;
+
+ document.getElementById("showWish").textContent=wish;
+ document.getElementById("showSender").textContent="💌 From: "+sender;
+
+ document.getElementById("intro").classList.add("active");
+
+ startFireworks();
+
+ const cover=document.getElementById("cover");
+ const letter=document.getElementById("letter");
+
+ setTimeout(()=>{
+  cover.classList.add("open");
+  document.getElementById("fireworksLabel").classList.add("show");
+ },1400);
+
+ setTimeout(()=>{
+  document.getElementById("coverStage").style.opacity="0";
+  letter.classList.add("show");
+  document.getElementById("closeIntro").classList.add("show");
+ },2700);
+}
+
+
+/* BACK TO MAIN PAGE */
+
+function closeWelcome(){
+
+ stopFireworks();
+ greetingStarted=false;
+
+ document.getElementById("intro").classList.remove("active");
+ document.getElementById("cover").classList.remove("open");
+ document.getElementById("letter").classList.remove("show");
+ document.getElementById("coverStage").style.opacity="1";
+ document.getElementById("fireworksLabel").classList.remove("show");
+ document.getElementById("closeIntro").classList.remove("show");
+
+ history.replaceState({},document.title,location.pathname);
+}
+
+document.getElementById("closeIntro")
+ .addEventListener("click",closeWelcome);
+
+
+/* PAGE LOAD */
+
+window.addEventListener("load",()=>{
+
+ const video=document.getElementById("bgVideo");
+
+ if(video){
+  video.play().catch(()=>{});
+ }
+
+ startWelcome();
+});
+
+</script>
+</body>
+</html>
